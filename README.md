@@ -1,5 +1,9 @@
 # MCP Grep Server
 
+[![npm version](https://badge.fury.io/js/@247arjun%2Fmcp-grep.svg)](https://badge.fury.io/js/@247arjun%2Fmcp-grep)
+[![npm downloads](https://img.shields.io/npm/dm/@247arjun/mcp-grep.svg)](https://www.npmjs.com/package/@247arjun/mcp-grep)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A Model Context Protocol (MCP) server that provides powerful text search capabilities using the `grep` command-line utility. This server allows you to search for patterns in files and directories using both natural language descriptions and direct regex patterns.
 
 ## Features
