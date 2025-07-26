@@ -1,4 +1,4 @@
-# Grep MCP Server
+# MCP Grep Server
 
 A Model Context Protocol (MCP) server that provides powerful text search capabilities using the `grep` command-line utility. This server allows you to search for patterns in files and directories using both natural language descriptions and direct regex patterns.
 
@@ -31,10 +31,10 @@ A Model Context Protocol (MCP) server that provides powerful text search capabil
 
 ```bash
 # Install globally
-npm install -g grep-mcp
+npm install -g @247arjun/mcp-grep
 
 # Or install locally in your project
-npm install grep-mcp
+npm install @247arjun/mcp-grep
 ```
 
 ### Method 2: From Source
@@ -75,8 +75,8 @@ Add to your Claude Desktop configuration file:
 ```json
 {
   "mcpServers": {
-    "grep-mcp": {
-      "command": "grep-mcp",
+    "mcp-grep": {
+      "command": "mcp-grep",
       "args": []
     }
   }
@@ -277,7 +277,7 @@ npm start
 
 ### Project Structure
 ```
-grep-mcp/
+mcp-grep/
 ├── src/
 │   └── index.ts          # Main server implementation
 ├── build/                # Compiled JavaScript output
@@ -303,8 +303,8 @@ This server implements the Model Context Protocol and can be used with any MCP-c
 ```json
 {
   "mcpServers": {
-    "grep-mcp": {
-      "command": "grep-mcp",
+    "mcp-grep": {
+      "command": "mcp-grep",
       "args": [],
       "description": "Advanced text search capabilities"
     }
@@ -316,9 +316,9 @@ This server implements the Model Context Protocol and can be used with any MCP-c
 ```json
 {
   "mcpServers": {
-    "grep-mcp": {
+    "mcp-grep": {
       "command": "npx",
-      "args": ["grep-mcp"],
+      "args": ["@247arjun/mcp-grep"],
       "description": "Advanced text search capabilities"
     }
   }
@@ -329,7 +329,7 @@ This server implements the Model Context Protocol and can be used with any MCP-c
 ```json
 {
   "mcpServers": {
-    "grep-mcp": {
+    "mcp-grep": {
       "command": "node",
       "args": ["/absolute/path/to/mcp-grep/build/index.js"],
       "description": "Advanced text search capabilities"
@@ -343,8 +343,8 @@ This server implements the Model Context Protocol and can be used with any MCP-c
 ### Common Issues
 
 1. **"Command not found" error**
-   - Ensure grep-mcp is installed globally: `npm install -g grep-mcp`
-   - Or use npx: `"command": "npx", "args": ["grep-mcp"]`
+   - Ensure mcp-grep is installed globally: `npm install -g @247arjun/mcp-grep`
+   - Or use npx: `"command": "npx", "args": ["@247arjun/mcp-grep"]`
 
 2. **"Permission denied" error**
    - Check file permissions: `chmod +x build/index.js`

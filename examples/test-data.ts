@@ -1,4 +1,4 @@
-// Example test file for grep-mcp server
+// Example test file for mcp-grep server
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { promises as fs } from 'fs';
 

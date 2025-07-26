@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-07-26
 
 ### Added
-- Initial release of grep-mcp server
+- Initial release of mcp-grep server
 - Natural language search intent tool (`grep_search_intent`)
 - Direct regex pattern search tool (`grep_regex`)
 - Match counting tool (`grep_count`)

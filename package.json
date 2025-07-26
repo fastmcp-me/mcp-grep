@@ -1,11 +1,11 @@
 {
-  "name": "grep-mcp",
+  "name": "@247arjun/mcp-grep",
   "version": "1.0.0",
   "description": "An MCP server that exposes grep functionality with natural language search capabilities",
   "main": "build/index.js",
   "type": "module",
   "bin": {
-    "grep-mcp": "./build/index.js"
+    "mcp-grep": "./build/index.js"
   },
   "scripts": {
     "build": "tsc && chmod +x build/index.js",

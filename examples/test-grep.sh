@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Test script for grep-mcp server
-# This script demonstrates the grep-mcp functionality
+# Test script for mcp-grep server
+# This script demonstrates the mcp-grep functionality
 
-echo "Testing grep-mcp server functionality..."
+echo "Testing mcp-grep server functionality..."
 echo "========================================"
 
 # Create a test file with various patterns
@@ -69,4 +69,4 @@ echo ""
 # Clean up
 rm test-content.txt
 
-echo "Test completed! The grep-mcp server provides these search capabilities through MCP tools."
+echo "Test completed! The mcp-grep server provides these search capabilities through MCP tools."

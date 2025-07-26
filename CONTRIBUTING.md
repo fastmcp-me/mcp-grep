@@ -1,6 +1,6 @@
-# Contributing to grep-mcp
+# Contributing to mcp-grep
 
-Thank you for your interest in contributing to grep-mcp! This document provides guidelines for contributing to the project.
+Thank you for your interest in contributing to mcp-grep! This document provides guidelines for contributing to the project.
 
 ## Getting Started
 
@@ -104,4 +104,4 @@ Feel free to open an issue for:
 
 ## License
 
-By contributing to grep-mcp, you agree that your contributions will be licensed under the MIT License.
+By contributing to mcp-grep, you agree that your contributions will be licensed under the MIT License.

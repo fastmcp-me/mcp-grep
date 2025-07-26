@@ -1,6 +1,6 @@
 # Example MCP Configuration for Claude Desktop
 
-To use the grep-mcp server with Claude Desktop, add this configuration to your Claude Desktop settings:
+To use the mcp-grep server with Claude Desktop, add this configuration to your Claude Desktop settings:
 
 ## Location
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
@@ -11,10 +11,10 @@ To use the grep-mcp server with Claude Desktop, add this configuration to your C
 ```json
 {
   "mcpServers": {
-    "grep-mcp": {
+    "mcp-grep": {
       "command": "npx",
-      "args": ["grep-mcp"],
-      "description": "Grep MCP Server - Provides powerful text search capabilities"
+      "args": ["@247arjun/mcp-grep"],
+      "description": "MCP Grep Server - Provides powerful text search capabilities"
     }
   }
 }
@@ -27,10 +27,10 @@ If you have the project built locally:
 ```json
 {
   "mcpServers": {
-    "grep-mcp": {
+    "mcp-grep": {
       "command": "node",
       "args": ["/path/to/mcp-grep/build/index.js"],
-      "description": "Grep MCP Server - Local installation"
+      "description": "MCP Grep Server - Local installation"
     }
   }
 }
@@ -38,15 +38,15 @@ If you have the project built locally:
 
 ## Alternative: Global Installation
 
-After running `npm install -g grep-mcp`:
+After running `npm install -g @247arjun/mcp-grep`:
 
 ```json
 {
   "mcpServers": {
-    "grep-mcp": {
-      "command": "grep-mcp",
+    "mcp-grep": {
+      "command": "mcp-grep",
       "args": [],
-      "description": "Grep MCP Server - Global installation"
+      "description": "MCP Grep Server - Global installation"
     }
   }
 }
@@ -58,7 +58,7 @@ After adding the configuration:
 1. Restart Claude Desktop
 2. Start a new conversation
 3. Ask Claude to search for something in your files using natural language
-4. The grep-mcp tools should be available for text searching
+4. The mcp-grep tools should be available for text searching
 
 ## Example Usage
 

@@ -39,7 +39,7 @@ The mcp-grep project is **READY** for GitHub publication with the following impr
 The project is **READY** for local consumption and deployment:
 
 ### Installation Methods ✅
-- [x] NPM package installation (`npm install -g grep-mcp`)
+- [x] NPM package installation (`npm install -g @247arjun/mcp-grep`)
 - [x] Source installation with clear instructions
 - [x] Direct GitHub installation support
 

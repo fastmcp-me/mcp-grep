@@ -9,7 +9,7 @@ import { resolve } from "path";
 
 // Create server instance
 const server = new McpServer({
-  name: "grep-mcp",
+  name: "mcp-grep",
   version: "1.0.0",
   capabilities: {
     resources: {},
@@ -584,7 +584,7 @@ async function main() {
   await server.connect(transport);
   
   // Log to stderr since stdout is used for MCP communication
-  console.error("Grep MCP Server running on stdio");
+  console.error("MCP Grep Server running on stdio");
 }
 
 main().catch((error) => {
