@@ -5,6 +5,10 @@
 
 A Model Context Protocol (MCP) server that provides powerful text search capabilities using the `grep` command-line utility. This server allows you to search for patterns in files and directories using both natural language descriptions and direct regex patterns.
 
+<a href="https://glama.ai/mcp/servers/@247arjun/mcp-grep">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@247arjun/mcp-grep/badge" alt="Grep Server MCP server" />
+</a>
+
 ## Features
 
 ### 🧠 Natural Language Search
@@ -343,4 +347,3 @@ echo '{"jsonrpc": "2.0", "method": "initialize", "params": {}}' | node build/ind
 - Blocks potentially dangerous grep flags in advanced mode
 - Input validation with Zod schemas
 - No access to system files outside specified targets
-
