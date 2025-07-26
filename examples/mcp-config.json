@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "grep-mcp": {
+      "command": "npx",
+      "args": ["grep-mcp"],
+      "description": "Grep MCP Server - Provides powerful text search capabilities"
+    }
+  }
+}

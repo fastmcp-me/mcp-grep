@@ -27,9 +27,22 @@ A Model Context Protocol (MCP) server that provides powerful text search capabil
 
 ## Installation
 
+### Method 1: NPM Installation (Recommended)
+
 ```bash
-# Clone or download the project
-cd grep-mcp
+# Install globally
+npm install -g grep-mcp
+
+# Or install locally in your project
+npm install grep-mcp
+```
+
+### Method 2: From Source
+
+```bash
+# Clone the repository
+git clone https://github.com/247arjun/mcp-grep.git
+cd mcp-grep
 
 # Install dependencies
 npm install
@@ -37,8 +50,60 @@ npm install
 # Build the project
 npm run build
 
-# Make globally available (optional)
+# Optional: Link globally
 npm link
+```
+
+### Method 3: Direct from GitHub
+
+```bash
+# Install directly from GitHub
+npm install -g git+https://github.com/247arjun/mcp-grep.git
+```
+
+## Quick Start
+
+### 1. Configure with Claude Desktop
+
+Add to your Claude Desktop configuration file:
+
+**Location:**
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%/Claude/claude_desktop_config.json`
+
+**Configuration:**
+```json
+{
+  "mcpServers": {
+    "grep-mcp": {
+      "command": "grep-mcp",
+      "args": []
+    }
+  }
+}
+```
+
+### 2. Restart Claude Desktop
+
+After adding the configuration, restart Claude Desktop to load the MCP server.
+
+### 3. Start Using
+
+Ask Claude to search your files:
+- "Find all email addresses in my project"
+- "Search for TODO comments in JavaScript files"
+- "Count function definitions in the src directory"
+
+## Verification
+
+Test that the server is working:
+
+```bash
+# Test the built server
+node build/index.js
+
+# Should show: "Grep MCP Server running on stdio"
+# Press Ctrl+C to exit
 ```
 
 ## Available Tools
@@ -225,18 +290,84 @@ grep-mcp/
 
 This server implements the Model Context Protocol and can be used with any MCP-compatible client.
 
-### Server Configuration
-Add to your MCP client configuration:
+### Supported MCP Clients
 
+- **Claude Desktop** (recommended)
+- **Cline VS Code Extension**
+- **Continue.dev**
+- Any other MCP-compatible client
+
+### Server Configuration Examples
+
+#### Claude Desktop
 ```json
 {
   "mcpServers": {
     "grep-mcp": {
       "command": "grep-mcp",
-      "args": []
+      "args": [],
+      "description": "Advanced text search capabilities"
     }
   }
 }
+```
+
+#### Alternative: Using npx (no global install needed)
+```json
+{
+  "mcpServers": {
+    "grep-mcp": {
+      "command": "npx",
+      "args": ["grep-mcp"],
+      "description": "Advanced text search capabilities"
+    }
+  }
+}
+```
+
+#### Local Development Setup
+```json
+{
+  "mcpServers": {
+    "grep-mcp": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-grep/build/index.js"],
+      "description": "Advanced text search capabilities"
+    }
+  }
+}
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **"Command not found" error**
+   - Ensure grep-mcp is installed globally: `npm install -g grep-mcp`
+   - Or use npx: `"command": "npx", "args": ["grep-mcp"]`
+
+2. **"Permission denied" error**
+   - Check file permissions: `chmod +x build/index.js`
+   - Rebuild the project: `npm run build`
+
+3. **MCP server not appearing in Claude**
+   - Verify JSON syntax in configuration file
+   - Restart Claude Desktop completely
+   - Check that the command path is correct
+
+4. **"grep command not found"**
+   - Install grep on your system (usually pre-installed on macOS/Linux)
+   - Windows users: Install via WSL or use Git Bash
+
+### Debugging
+
+Enable verbose logging by setting environment variable:
+```bash
+# For development
+DEBUG=1 node build/index.js
+
+# Test with sample input
+echo '{"jsonrpc": "2.0", "method": "initialize", "params": {}}' | node build/index.js
 ```
 
 ## Security Notes

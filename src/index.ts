@@ -4,12 +4,8 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 import { spawn } from "child_process";
-import { promisify } from "util";
-import { exec } from "child_process";
 import { existsSync, statSync } from "fs";
 import { resolve } from "path";
-
-const execAsync = promisify(exec);
 
 // Create server instance
 const server = new McpServer({

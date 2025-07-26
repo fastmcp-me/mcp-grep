@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "curl-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["curl-mcp"]
+    }
+  }
+}
