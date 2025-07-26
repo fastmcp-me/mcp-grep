@@ -1,8 +1,7 @@
-# MCP Grep Server
+# MCP Server for Grep
 
 [![npm version](https://badge.fury.io/js/@247arjun%2Fmcp-grep.svg)](https://badge.fury.io/js/@247arjun%2Fmcp-grep)
 [![npm downloads](https://img.shields.io/npm/dm/@247arjun/mcp-grep.svg)](https://www.npmjs.com/package/@247arjun/mcp-grep)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Model Context Protocol (MCP) server that provides powerful text search capabilities using the `grep` command-line utility. This server allows you to search for patterns in files and directories using both natural language descriptions and direct regex patterns.
 
@@ -65,9 +64,9 @@ npm link
 npm install -g git+https://github.com/247arjun/mcp-grep.git
 ```
 
-## Quick Start
+## Configuration
 
-### 1. Configure with Claude Desktop
+### Claude Desktop Setup
 
 Add to your Claude Desktop configuration file:
 
@@ -87,16 +86,31 @@ Add to your Claude Desktop configuration file:
 }
 ```
 
-### 2. Restart Claude Desktop
+**Alternative: Using npx (no global install needed)**
+```json
+{
+  "mcpServers": {
+    "mcp-grep": {
+      "command": "npx",
+      "args": ["@247arjun/mcp-grep"]
+    }
+  }
+}
+```
+
+**Local Development Setup**
+```json
+{
+  "mcpServers": {
+    "mcp-grep": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-grep/build/index.js"]
+    }
+  }
+}
+```
 
 After adding the configuration, restart Claude Desktop to load the MCP server.
-
-### 3. Start Using
-
-Ask Claude to search your files:
-- "Find all email addresses in my project"
-- "Search for TODO comments in JavaScript files"
-- "Count function definitions in the src directory"
 
 ## Verification
 
@@ -288,58 +302,6 @@ mcp-grep/
 ├── package.json          # Project configuration
 ├── tsconfig.json         # TypeScript configuration
 └── README.md            # This file
-```
-
-## MCP Integration
-
-This server implements the Model Context Protocol and can be used with any MCP-compatible client.
-
-### Supported MCP Clients
-
-- **Claude Desktop** (recommended)
-- **Cline VS Code Extension**
-- **Continue.dev**
-- Any other MCP-compatible client
-
-### Server Configuration Examples
-
-#### Claude Desktop
-```json
-{
-  "mcpServers": {
-    "mcp-grep": {
-      "command": "mcp-grep",
-      "args": [],
-      "description": "Advanced text search capabilities"
-    }
-  }
-}
-```
-
-#### Alternative: Using npx (no global install needed)
-```json
-{
-  "mcpServers": {
-    "mcp-grep": {
-      "command": "npx",
-      "args": ["@247arjun/mcp-grep"],
-      "description": "Advanced text search capabilities"
-    }
-  }
-}
-```
-
-#### Local Development Setup
-```json
-{
-  "mcpServers": {
-    "mcp-grep": {
-      "command": "node",
-      "args": ["/absolute/path/to/mcp-grep/build/index.js"],
-      "description": "Advanced text search capabilities"
-    }
-  }
-}
 ```
 
 ## Troubleshooting
